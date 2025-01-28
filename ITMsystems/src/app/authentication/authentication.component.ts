@@ -12,10 +12,10 @@ export class AuthenticationComponent {
 }
 
 const config: sql.config = {
-  server: 'your_server_name',
-  database: 'your_database_name',
-  user: 'your_username',
-  password: 'your_password',
+  server: 'ITMsystemsDB',
+  database: 'dbITMS',
+  user: 'dbadmin',
+  password: 'admin2025.',
   options: {
     encrypt: true, // Enable encryption if needed
   },

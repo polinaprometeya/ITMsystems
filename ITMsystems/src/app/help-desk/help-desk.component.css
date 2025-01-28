@@ -1,0 +1,29 @@
+.help-desk {
+    max-width: 400px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .filters button {
+    margin: 5px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .ticket-section {
+    margin-top: 15px;
+  }
+  
+  .ticket {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .level {
+    background: #eee;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+  
