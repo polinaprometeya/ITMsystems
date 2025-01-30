@@ -8,12 +8,12 @@
       <button (click)="filterTickets(3)">Level 3</button>
     </div>
   
-    <div class="ticket-section" *ngFor="let status of ['New', 'In Progress', 'Done']">
+     <div class="ticket-section" *ngFor="let status of ['New', 'In Progress', 'Done']">
       <h3>{{ status }}</h3>
-      <div *ngFor="let ticket of filteredTickets.filter(t => t.status === status)" class="ticket">
+      <!-- <div *ngFor="let ticket of filteredTickets.filter(t => t.status === status)" class="ticket">
         <p><strong>#{{ ticket.id }}</strong> - {{ ticket.title }}</p>
         <span class="level">Level {{ ticket.level }}</span>
-      </div>
-    </div>
+      </div> -->
+    </div> 
   </div>
   
