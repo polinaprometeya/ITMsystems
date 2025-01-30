@@ -14,15 +14,21 @@
     <div class="ticket-section" *ngFor="let status of ['New', 'In Progress', 'Done']">
       <h3>{{ status }}</h3>
 
-       <!-- <ng-container *ngIf="hasTickets(status); else noTickets">
-        <div *ngFor=" ticket of filteredTickets.filter(ticket => ticket.status === status)" class="ticket">
-          <div class="ticket-info">
-            <p><strong>#{{ tickets.id }}</strong> - {{ ticket.title }}</p>
-            <span class="timestamp">{{ ticket.timestamp }}</span>
+      @if(status){
+        <p>Tickets Overview</p>
+        @for(t of tickets; track t.id){
+          <div class="ticket">
+            <p>#{{ t.id }} - {{ t.title }}</p>
+              <div class="ticket-info">
+                <span class="timestamp">{{ t.timestamp }} - </span>
+                <!-- <span class="level level-{{ t.level }}"> Level  {{ t.level }}</span> -->
+                <span > {{ t.description }} </span>
+            </div>
           </div>
-          <span class="level level-{{ tickets.level }}">Level {{ tickets.level }}</span>
-        </div>
-      </ng-container>  -->
+        }
+      } @else {
+        {{noTickets}}
+      }
 
       <ng-template #noTickets>
         <p class="no-tickets">No tickets available</p>
