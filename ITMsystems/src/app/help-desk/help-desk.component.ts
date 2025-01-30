@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import * From
+// import * as mockData from '../../public/mockData.json';
 
 interface Ticket {
   id: number;
