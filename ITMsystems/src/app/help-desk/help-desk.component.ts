@@ -38,20 +38,25 @@ export class HelpDeskComponent {
     return this.filterLevel !== null ? this.tickets.filter(ticket => ticket.level === this.filterLevel) : this.tickets;
   }
 
+  //  filterTickets(level: number | null) {
+  //   this.selectedLevel = level;
+  //   this.filteredTickets = level ? this.tickets.filter(t => t.level === level) : [...this.tickets];
+  // }
+
   //✅Filters tickets based on the selected level and status.
    filteredStatus(status: string): Ticket[] {
    return this.tickets.filter(ticket => ticket.status === status && (this.filterLevel === null || ticket.level === this.filterLevel));
   }
 
-  //  filterTickets(level: number | null) {
-  //   this.selectedLevel = level;
-  //   this.filteredTickets = level ? this.tickets.filter(t => t.level === level) : [...this.tickets];
-  // }
 
   //✅Checks if there are any tickets in the given status.
   hasTickets(status: string): boolean {
     if(this.filteredTickets.some(ticket => ticket.status === status))
       {return true }
     else return false;
+  }
+
+  onTicketClick(): void {
+    alert("Ticket editing and detailed view of single ticket coming soon")
   }
 }

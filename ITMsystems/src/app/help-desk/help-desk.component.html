@@ -12,15 +12,18 @@
   <!-- Ticket Sections -->
   <div class="ticket-container">
   
+    <!-- go through each status in the statuses array -->
     @for(status of statuses; track status)
     {
       <div class="ticket-section" >
         <h3>{{ status }}</h3>
 
+        <!-- If there are tickets for this status -->
         @if(hasTickets(status)){
           <p>Tickets Overview</p>
+          <!-- Generate a ticket with every ticket id -->
           @for(t of filteredStatus(status); track t.id){
-            <div class="ticket">
+            <div class="ticket" (click)=" onTicketClick()">
               <p class="p">#{{ t.id }} {{ t.title }}  ----- </p>
               <br />
               <span class="level level-{{ t.level }}"> Level  {{ t.level }}</span> 
