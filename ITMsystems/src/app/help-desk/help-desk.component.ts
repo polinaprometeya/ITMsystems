@@ -9,6 +9,7 @@ interface Ticket {
   description: string;
   timestamp: string;
   level: 1 | 2 | 3;
+  userID: number;
 }
 
 @Component({
@@ -23,10 +24,10 @@ export class HelpDeskComponent {
 
   //data -- that should come from backend
   tickets: Ticket[] = [
-    { id: 7, title: 'Issue with login', status: 'New',  description:'ksadfaskfd', timestamp: '2024-01-27 09:02:00', level: 1 },
-    { id: 8, title: 'Server downtime', status: 'In Progress',  description:'ksadfaskfd', timestamp: "2024-01-28 10:20:00", level: 3 },
-    { id: 9, title: 'Email not working', status: 'Done',  description:'ksadfaskfd', timestamp: "2024-01-29 09:30:00", level: 2 },
-    { id: 10, title: 'Email not working', status: 'In Progress',  description:'kskfd', timestamp: "2024-01-29 10:11:00", level: 2 },
+    { id: 7, title: 'Issue with login', status: 'New',  description:'ksadfaskfd', timestamp: '2024-01-27 09:02:00', level: 1, userID: 2},
+    { id: 8, title: 'Server downtime', status: 'In Progress',  description:'ksadfaskfd', timestamp: "2024-01-28 10:20:00", level: 3, userID: 2 },
+    { id: 9, title: 'Email not working', status: 'Done',  description:'ksadfaskfd', timestamp: "2024-01-29 09:30:00", level: 2,  userID: 1 },
+    { id: 10, title: 'Email not working', status: 'In Progress',  description:'kskfd', timestamp: "2024-01-29 10:11:00", level: 2, userID: 6},
   ];
 
   filterLevel: number | null = null;

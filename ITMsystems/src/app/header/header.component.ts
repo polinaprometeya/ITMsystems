@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   title = 'ITMsystems';
+//  @input() title: string | undefined = 'ITMsystems';
 }
