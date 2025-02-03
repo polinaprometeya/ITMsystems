@@ -12,13 +12,13 @@ router.post(
         .custom(async (email) => 
             {
             const user = await User.find(email);
-            if(user[0].length>0)
+            if(user[0].length > 0)
                 {
-                    return Promise.reject('Email adress already exist.')
+                    return Promise.reject('Email adress already exist.');
                 }
             })
         .normalizeEmail(),
-        body('password').trim().isLength({min: 7, max: 12})
+        body('password').trim().isLength({min: 7}),
 
     ], authController.signup
 );

@@ -8,6 +8,7 @@ exports.signup = async (req , res , next) => {
     const error = validationResult(req);
     if(!error.isEmpty()) return;
 
+    //remamber to make id field not nullable, unique and set it to auto increment
     const name = req.body.name;
     const email =  req.body.email;
     const password = req.body.password;
@@ -23,7 +24,7 @@ exports.signup = async (req , res , next) => {
 
         const result = await User.save(userDetails);
 
-        res.status(201).json({ message: 'User registered.'})
+        res.status(201).json({ message: 'User registered.'}); 
 
     } catch (error){
         if(!error.statusCode){
