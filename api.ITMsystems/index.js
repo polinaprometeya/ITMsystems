@@ -4,7 +4,7 @@ const authRoutes = require('./routes/auth');
 const errorController = require('./controllers/error');
 const app = express();
 const ports = process.env.PORT  || 3000;
-//|| 3306  || 4200
+//|| 3306  || 4200 || 3000
 
 
 app.use(bodyParser.json());

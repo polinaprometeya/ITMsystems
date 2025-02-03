@@ -1,5 +1,6 @@
 const  { validationResult } = require('express-validator'); //getting a library
 const bcrypt = require('bcryptjs'); //encryption stuff. hashing // getting this librery that does hashing 
+const User = require('../models/user'); //save the details of the user
 
 //this shares the signup rout 
 exports.signup = async (req , res , next) => {
