@@ -1,17 +1,14 @@
-const express = require('express');
-//this is validation, when you send to the server it need to validate data.
-
+const express = require('express'); //this is validation, when you send to the server it need to validate data.
 const { body } = require('express-validator'); 
-
 const router = express.Router();
-
 const User = require('../models/user');
+const authController = require('../controllers/auth');
 
 router.post(
     '/signup',
     [ 
         body('name').trim().not().isEmpty(),
-        body('email').isEmail.withMessage('Please enter a valid email.')
+        body('email').isEmail().withMessage('Please enter a valid email.')
         .custom(async (email) => 
             {
             const user = await User.find(email);

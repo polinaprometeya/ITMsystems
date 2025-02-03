@@ -1,4 +1,3 @@
-//this is what happens if an error occures
 
 exports.get404 = (req, res, next)=> {
     const error = new Error('Not found.');
@@ -16,3 +15,5 @@ exports.get500 = (error, req, res, next)=>{
         }
     })
 }
+
+//this is what happens if an error occures

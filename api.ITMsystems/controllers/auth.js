@@ -1,7 +1,5 @@
 const  { validationResult } = require('express-validator'); //getting a library
-
-//encryption stuff. hashing
-const bcrypt = require('bcryptjs'); // getting this librery that does hashing
+const bcrypt = require('bcryptjs'); //encryption stuff. hashing // getting this librery that does hashing 
 
 //this shares the signup rout 
 exports.signup = async (req , res , next) => {
@@ -31,7 +29,5 @@ exports.signup = async (req , res , next) => {
             err.statusCOde = 500;
         }
         next(err);
-
-        //handle
     }
 }
