@@ -1,6 +1,6 @@
 {
     "host":"localhost",
     "user": "root",
-    "database":"itmsDB_v2",
+    "database":"itmsdb_v2",
     "password":"admin2025."
 }

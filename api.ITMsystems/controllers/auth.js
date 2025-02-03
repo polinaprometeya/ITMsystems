@@ -6,7 +6,7 @@ const User = require('../models/user'); //save the details of the user
 exports.signup = async (req , res , next) => {
     //look at request and see if there are any errors
     const error = validationResult(req);
-    if(!errors.isEmpty()) return;
+    if(!error.isEmpty()) return;
 
     const name = req.body.name;
     const email =  req.body.email;
@@ -25,10 +25,10 @@ exports.signup = async (req , res , next) => {
 
         res.status(201).json({ message: 'User registered.'})
 
-    } catch (err){
-        if(!err.statusCode){
-            err.statusCOde = 500;
+    } catch (error){
+        if(!error.statusCode){
+            error.statusCOde = 500;
         }
-        next(err);
+        next(error);
     }
 }
