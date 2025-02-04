@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RouterLink, RouterOutlet } from '@angular/router';
-
 import { ReactiveFormsModule, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
@@ -9,8 +7,6 @@ import { MatInputModule} from '@angular/material/input';
 @Component({
   selector: 'app-authentication',
   imports: [
-    // RouterLink,
-    // RouterOutlet,
 
     ReactiveFormsModule,
     MatFormFieldModule,

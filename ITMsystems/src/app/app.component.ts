@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {RouterOutlet } from '@angular/router';
 
-import { HeaderComponent } from './header/header.component';
-
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule} from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import{ MatListModule} from '@angular/material/list';
+
+import { HeaderComponent } from './header/header.component';
 
 
 @Component({
@@ -16,13 +16,13 @@ import{ MatListModule} from '@angular/material/list';
   [
     RouterOutlet, 
 
-    HeaderComponent,
-
     MatIconModule,
     MatCardModule,
     MatDividerModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
