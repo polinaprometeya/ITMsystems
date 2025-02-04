@@ -33,9 +33,9 @@
 
     &:hover,
     &.active {
-      background-color: #007bff;
+      background-color: #9ebeb9;
       color: white;
-      border-color: #007bff;
+      border-color: #9ebeb9;
     }
   }
 }
