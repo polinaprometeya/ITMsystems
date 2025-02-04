@@ -1,13 +1,11 @@
 <section class="header-style">
-    <h1>Hello, {{ title }}</h1>
+    <h1 [routerLink]="['/']" routerLinkActive="router-link-active">Hello, {{ title }}</h1>
+    <mat-toolbar-row class="header-toolbar" color="accent"> 
 
-    <nav class="header-toolbar">
-        <a [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</a>
-        
-        <a [routerLink]="['/Signup']" routerLinkActive="router-link-active">Signup</a> 
+        <a [routerLink]="['/Login']" routerLinkActive="router-link-active"><span>Login</span></a>
+        <a [routerLink]="['/Signup']" routerLinkActive="router-link-active"><span>Signup</span></a> 
 
-
-    </nav>
+    </mat-toolbar-row>
     <!-- <router-outlet /> -->
 
 </section>
