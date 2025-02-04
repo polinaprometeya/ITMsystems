@@ -9,8 +9,8 @@
 
 
   h1 {
-    font-size: 3.125rem;
     
+    font-size: 3.125rem;   
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
@@ -20,9 +20,11 @@
   }
 
   .header-toolbar{
-    display:flex;
+    display:fixed;
     justify-content: space-between ;
     position: relative;
     padding: 1px;
   }
+
+
 }

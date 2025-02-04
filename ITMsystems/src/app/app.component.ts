@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {RouterOutlet } from '@angular/router';
 
-import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { HeaderComponent } from './header/header.component';
 
 import { MatIconModule } from '@angular/material/icon';
@@ -17,9 +16,7 @@ import{ MatListModule} from '@angular/material/list';
   [
     RouterOutlet, 
 
-    HelpDeskComponent, 
     HeaderComponent,
-   
 
     MatIconModule,
     MatCardModule,
