@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
+const ticketRoutes = require('./routes/ticket');
 const errorController = require('./controllers/error');
 const app = express();
 const ports = process.env.PORT  || 3000;
@@ -17,8 +18,11 @@ app.use((req,res,next)=>{
     next();
 });
 
-//handling the routes
+//handling the for signup and login
 app.use('/auth', authRoutes);
+
+//handling the routes for tickets
+app.use('/ticket', ticketRoutes);
 
 //error controlling, 500 is for everything else.
 app.use(errorController.get404);
