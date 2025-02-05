@@ -1,4 +1,4 @@
-<p>Signup</p>
+<h1>Signup</h1>
 <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
 
     <mat-form-field>
@@ -13,6 +13,11 @@
         <mat-label>Password</mat-label>
         <input matInput type="password" placeholder="Min 7 characters for Password" formControlName="password">
     </mat-form-field>
-    <button color="accent" [disabled]="!signupForm.valid" mat-raised-button type="submit"><span>Sign Up</span></button>
+    <button 
+    color="accent" 
+    [disabled] = "!signupForm.valid" 
+    mat-raised-button 
+    type="submit">
+    <span>Sign Up</span></button>
 </form>
 
