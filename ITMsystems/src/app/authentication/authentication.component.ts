@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators} from '@angular
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-authentication',
   imports: [
@@ -17,9 +19,9 @@ import { MatInputModule} from '@angular/material/input';
   styleUrl: './authentication.component.css'
 })
 export class AuthenticationComponent implements OnInit{
-  signupForm = new FormGroup('');
+  signupForm = new FormGroup("");
 
-  constructor(){}
+  constructor(private authService: AuthService){}
 
   ngOnInit(): void {
     this.signupForm = this.createFormGroup();
@@ -31,11 +33,13 @@ export class AuthenticationComponent implements OnInit{
         name: new FormControl("", [Validators.required, Validators.minLength(2)]),
         email: new FormControl("", [Validators.required, Validators.email]),
         password: new FormControl("", [Validators.required, Validators.minLength(7)]),
-
       })
   }
 
   signup(): void{
-    if(this.signupForm){console.log(this.signupForm.value);}
+    // if(this.signupForm){}
+      this.authService
+      .signup(this.signupForm.value)
+      .subscribe((msg)=>console.log(msg));
   }
 }
