@@ -1,6 +1,17 @@
 <div class="help-desk">
   <h2>Help Desk Tickets</h2>
 
+  <app-create-ticket></app-create-ticket>
+  <mat-card class="ticket">
+    <button mat-icon-button >
+    <mat-icon color="warn" >delete</mat-icon>
+    </button>
+    <div> title</div>
+    <div> timestamp</div>
+    <div> description</div>
+  </mat-card>
+
+
   <!-- Filter Buttons -->
   <div class="filters">
     <button [class.active]="filterLevel === null" (click)="filterLevel = null">All</button>

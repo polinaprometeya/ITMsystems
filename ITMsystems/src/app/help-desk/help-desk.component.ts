@@ -1,21 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import * as mockData from '../../public/mockData.json';
 
-interface Ticket {
-  id: number;
-  title: string;
-  status: 'New' | 'In Progress' | 'Done';
-  description: string;
-  timestamp: string;
-  level: 1 | 2 | 3;
-  userId: number;
-}
+import { CreateTicketComponent } from '../create-ticket/create-ticket.component';
+// import * as mockData from '../../public/mockData.json';
+import { MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import  {Ticket} from '../models/Ticket';
+
 
 @Component({
   selector: 'app-help-desk',
   standalone: true,
-  imports: [CommonModule], 
+  imports: [CommonModule, CreateTicketComponent,MatCardModule, MatIconModule], 
   templateUrl: './help-desk.component.html',
   styleUrls: ['./help-desk.component.css']
 })
@@ -24,10 +20,11 @@ export class HelpDeskComponent {
 
   //data -- that should come from backend
   tickets: Ticket[] = [
-    { id: 7, title: 'Issue with login', status: 'New',  description:'ksadfaskfd', timestamp: '2024-01-27 09:02:00', level: 1, userId: 2},
-    { id: 8, title: 'Server downtime', status: 'In Progress',  description:'ksadfaskfd', timestamp: "2024-01-28 10:20:00", level: 3, userId: 2 },
-    { id: 9, title: 'Email not working', status: 'Done',  description:'ksadfaskfd', timestamp: "2024-01-29 09:30:00", level: 2,  userId: 1 },
-    { id: 10, title: 'Email not working', status: 'In Progress',  description:'kskfd', timestamp: "2024-01-29 10:11:00", level: 2, userId: 6},
+    { id: 8, title: 'Issue with login',  description:'ksadfaskfd', status: 'New', level: 1, userId: 2,  timestamp: '2024-01-27 09:02:00'},
+    { id: 9, title: 'Server downtime', description:'ksadfaskfd', status: 'In Progress',  level: 3, userId: 2 ,  timestamp: "2024-01-28 10:20:00"},
+    { id: 10, title: 'Email not working',  description:'ksadfaskfd', status: 'Done',   level: 2,  userId: 1, timestamp: "2024-01-29 09:30:00" },
+    { id: 11, title: 'Email not working', description:'kskfd', status: 'In Progress',  level: 2, userId: 6, timestamp: "2024-01-29 10:11:00"},
+    
   ];
 
   filterLevel: number | null = null;

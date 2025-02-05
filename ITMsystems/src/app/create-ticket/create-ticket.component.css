@@ -1,0 +1,72 @@
+.ticket {
+    background: rgb(129, 147, 133);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  
+    .ticket-info {
+  
+      background: rgb(212, 212, 212);
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex;
+  
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 12px;
+        border-radius: 6px;
+        
+      }
+  
+      .timestamp {
+        font-size: 12px;
+        color: #777;
+        padding: 12px;
+      }
+    }
+  
+    .level {
+      font-size: 12px;
+      padding: 12px;
+      border-radius: 15px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  
+    .level-1 {
+      background: #ffeb3b;
+      color: #333;
+    }
+  
+    .level-2 {
+      background: #ff9800;
+      color: white;
+    }
+  
+    .level-3 {
+      background: #e53935;
+      color: white;
+    }
+  }
+
+  mat-form-field, button {
+    width:100%;
+  }
+
+  button{
+    margin-bottom: 2em;
+  }
