@@ -14,8 +14,8 @@ router.post(
         body('title').trim().isLength({min: 5}).not().isEmpty(),
         body('description').trim().isLength({min: 5}).not().isEmpty(),
         body('status').trim().not().isEmpty(),
-        body('level').trim().isNumeric().not().isEmpty(),
-        body('userId').trim().isNumeric().not().isEmpty()
+        body('level').trim().not().isEmpty(),
+        body('userId').trim().not().isEmpty()
     ], ticketsController.postTicket
 );
 

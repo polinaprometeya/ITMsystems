@@ -17,7 +17,6 @@ module.exports = class Ticket
     return db.execute('SELECT * FROM tickets');
     }
 
-
     //when we make a new user the questionmarks prevent melicious code deleting the database etc. it is security.
     static save(ticket)
     {

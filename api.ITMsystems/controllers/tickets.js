@@ -1,5 +1,4 @@
 //the connection between the endpoint and frontend
-
 const  { validationResult } = require('express-validator'); //getting a library
 const Ticket = require('../models/ticket'); //save the details of the user
 
@@ -43,7 +42,7 @@ exports.postTicket = async (req , res , next) => {
             userId: userId
         }
 
-        const result = await User.save(ticketDetails);
+        const result = await Ticket.save(ticketDetails);
         res.status(201).json({ message: 'Succesfully Posted.'}); 
 
     } catch (error){
