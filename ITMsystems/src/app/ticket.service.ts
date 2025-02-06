@@ -22,4 +22,34 @@ export class TicketService {
       private http: HttpClient, 
       private errorHandlerService: ErrorHandlerService, 
       private router: Router) { }
+
+
+  fetchAll(): Observable<Ticket[]>{
+  return this.http
+        .get<Ticket[]>(this.url, {responseType: "json"})
+          .pipe(
+            catchError(this.errorHandlerService.handleError<Ticket[]>("fetchAll", []))
+          );
+  }
+
+  createTicket(formData: Partial<Ticket>, userId: User["id"]): Observable<Ticket> {
+
+    return this.http
+    .post<Ticket>(this.url, {
+      title: formData.title,  
+      description: formData.description, 
+      status: formData.status, 
+      level: formData.level, 
+      userId: userId}, this.httpOptions)
+      .pipe(
+        catchError(this.errorHandlerService.handleError<Ticket>("createTicket"))
+      );
+  }
+  deleteTicket(ticketId: Ticket["id"]): Observable<{}>{
+    return this.http
+        .delete<Ticket>( `${this.url}/${ticketId}` , this.httpOptions).pipe(
+          catchError(this.errorHandlerService.handleError<Ticket>("deleteTicket"))
+        );
+    }
+
 }
