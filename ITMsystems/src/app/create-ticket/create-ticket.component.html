@@ -13,20 +13,36 @@
 
         <mat-form-field class="ticket">
             <mat-label>Status</mat-label>
-            <mat-select>
-            @for (status of statuses; track status) {
+            <!-- <input matInput  placeholder="Write New, In Progress or Done " formControlName="status"> -->
+            <!-- <mat-select [(value)]="selected" >
+            @for (status of statuses; track status.value) {
                 <mat-option [value]="status.value">{{status.viewValue}}</mat-option>
             }
+            </mat-select > -->
+            <mat-select placeholder="Write Level 1, 2 or 3" formControlName="status" >
+                <option value="New"> New </option>
+                <option value="In Progress"> In Progress</option>
+                <option value="Done"> Done</option>
             </mat-select>
+
         </mat-form-field>
         
         <mat-form-field class="ticket">
-            <mat-label>Status</mat-label>
-            <mat-select>
-            @for (level of levels; track level) {
+            <mat-label>Level</mat-label>
+            <!-- <input matInput  placeholder="Write Level 1, 2 or 3" formControlName="level"> -->
+            <!-- <mat-select [(value)]="selected" >
+            @for (level of levels; track level.value) {
                 <mat-option [value]="level.value">{{level.viewValue}}</mat-option>
             }
+            </mat-select> -->
+            <mat-select placeholder="Write Level 1, 2 or 3" formControlName="level" >
+                <option value="1"> Level 1</option>
+                <option value="2"> Level 2</option>
+                <option value="3"> Level 3</option>
             </mat-select>
+
+
+
         </mat-form-field>
     <button 
     color="accent" 

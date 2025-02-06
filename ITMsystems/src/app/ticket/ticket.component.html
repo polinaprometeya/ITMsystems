@@ -1,6 +1,10 @@
 <h1>ticket works!</h1>
 <app-create-ticket  (create)="createTicket()"></app-create-ticket>
-<mat-card class="ticket" ngFor="let ticket of ticket$ | async">
+
+
+@for ( ticket of filteredTickets; track ticket.id )
+{
+<mat-card class="one-ticket">
   <button ngIf="ticket.user == userId" mat-icon-button >
   <mat-icon (click)="deleteTicket(ticket.id)" color="warn" >delete</mat-icon>
   </button>
@@ -8,3 +12,4 @@
   <div> timestamp: {{ticket.timestamp}} </div>
   <div> description: {{ticket.description}} </div>
 </mat-card>
+}

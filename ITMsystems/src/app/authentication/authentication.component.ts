@@ -41,8 +41,8 @@ export class AuthenticationComponent implements OnInit{
   signup(): void{
     if(this.signupForm){console.log(this.signupForm.value);}
 
-    this.authService
-      .signup(this.signupForm.value)
-      .subscribe((msg)=>console.log(msg));
+    // this.authService
+    //   .signup(this.signupForm.value)
+    //   .subscribe((msg)=>console.log(msg));
   }
 }

@@ -29,17 +29,17 @@ export class CreateTicketComponent  implements OnInit{
       this.ticketForm = this.createFormGroup();
     }
 
-    statuses: dropDown[] = [
-      {value: 'new-0', viewValue: 'New'},
-      {value: 'inprogress-1', viewValue: 'In Progress'},
-      {value: 'done-2', viewValue: 'Done'},
-    ];
+    // statuses: dropDown[] = [
+    //   {value: 'new-0', viewValue: 'New'},
+    //   {value: 'inprogress-1', viewValue: 'In Progress'},
+    //   {value: 'done-2', viewValue: 'Done'},
+    // ];
 
-    levels: dropDown[] = [
-      {value: '1-0', viewValue: 'Level 1'},
-      {value: '2-1', viewValue: 'Level 2'},
-      {value: '3-2', viewValue: 'Level 3'},
-    ];
+    // levels: dropDown[] = [
+    //   {value: '1-0', viewValue: 'Level 1'},
+    //   {value: '2-1', viewValue: 'Level 2'},
+    //   {value: '3-2', viewValue: 'Level 3'},
+    // ];
   
     createFormGroup():FormGroup{
         return new FormGroup

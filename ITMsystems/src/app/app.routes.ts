@@ -10,8 +10,8 @@ import { TicketComponent } from './ticket/ticket.component';
 export const routes: Routes = 
 [
 {path: '',component: HelpDeskComponent},
-{path: 'Home',component: CreateTicketComponent},
-{path: 'Create Ticket',component: HelpDeskComponent},
+{path: 'Home',component: HelpDeskComponent},
+{path: 'Create Ticket',component: CreateTicketComponent},
 {path: 'FAQ', component: FAQComponent},
 {path: 'Login',component: LoginComponent},
 {path: 'Signup',component: AuthenticationComponent},
