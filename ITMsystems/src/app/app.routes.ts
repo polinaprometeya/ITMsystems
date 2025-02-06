@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 export const routes: Routes = 
 [
@@ -14,5 +15,6 @@ export const routes: Routes =
 {path: 'FAQ', component: FAQComponent},
 {path: 'Login',component: LoginComponent},
 {path: 'Signup',component: AuthenticationComponent},
+{path: 'Ticket',component: TicketComponent},
 {path: '**', redirectTo: ''}
 ];

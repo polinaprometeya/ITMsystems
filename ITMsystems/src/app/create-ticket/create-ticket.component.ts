@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
 
 import { ReactiveFormsModule, FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
 import{Ticket} from '../models/Ticket';
-
 
 interface dropDown {
   value: string;
@@ -21,6 +20,8 @@ interface dropDown {
 
 export class CreateTicketComponent  implements OnInit{
   @ViewChild("formDirective") formDirective: NgForm | undefined;
+  @Output() create: EventEmitter<any> = new EventEmitter();
+
   ticketForm = new FormGroup('');
   constructor(){}
   
@@ -50,8 +51,9 @@ export class CreateTicketComponent  implements OnInit{
         })
     }
   
-    postTicket(formData: Pick<Ticket, "title"|"description"|"status"|"level">): void {
+    postTicket(formData: Ticket["title"] | Ticket["description"] | Ticket["status"] | Ticket["level"]): void {
       if(formData){console.log(formData);}
+      this.create.emit(null);
       this.ticketForm.reset();
       this.formDirective.resetForm()
     }

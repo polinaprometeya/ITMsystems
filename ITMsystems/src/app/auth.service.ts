@@ -14,7 +14,7 @@ import { ErrorHandlerService } from './error-handler.service';
 export class AuthService {
   private url = "http://localhost:4200/auth/";
   isUserLoggedIn$ = new BehaviorSubject<Boolean>(false);
-  userId: Pick<User, "id"> | undefined;
+  userId: User["id"] | undefined;
 
   httpOptions:{ headers: HttpHeaders} = { 
     headers: new HttpHeaders({"Content-Type": "application/json"})
@@ -37,19 +37,19 @@ export class AuthService {
 
 
 
-  login(email: Pick<User, "email">, password: Pick<User, "password">): Observable<{token: string, userId: Pick<User, "id">}>{
+  login(email: User["email"], password: User["password"]): Observable<{token: string, userId: User["id"]}>{
     return this.http
     .post(`${this.url}/login` , {email, password}, this.httpOptions)
     .pipe(
       first(),
-      tap((tokenObject: {token: string, userId: Pick<User, "id">}) => {
+      tap((tokenObject: {token: string, userId: User["id"]}) => {
         this.userId =  tokenObject.userId;
         localStorage.setItem("token", tokenObject.token);
         this.isUserLoggedIn$.next(true);
         this.router.navigate(["post"]);
 
       }),
-      catchError(this.errorHandlerService.handleError<{token: string, userId: Pick<User, "id">}>("login"))
+      catchError(this.errorHandlerService.handleError<{token: string, userId: User["id"]}>("login"))
     );
   }
 }

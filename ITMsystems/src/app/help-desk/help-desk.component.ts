@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { CreateTicketComponent } from '../create-ticket/create-ticket.component';
+import { RouterLink } from '@angular/router';
 // import * as mockData from '../../public/mockData.json';
-import { MatCardModule} from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import  {Ticket} from '../models/Ticket';
 
 
 @Component({
   selector: 'app-help-desk',
   standalone: true,
-  imports: [CommonModule, CreateTicketComponent,MatCardModule, MatIconModule], 
+  imports: [CommonModule, RouterLink], 
   templateUrl: './help-desk.component.html',
   styleUrls: ['./help-desk.component.css']
 })

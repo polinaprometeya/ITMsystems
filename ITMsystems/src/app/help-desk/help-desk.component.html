@@ -1,17 +1,6 @@
 <div class="help-desk">
   <h2>Help Desk Tickets</h2>
 
-  <app-create-ticket></app-create-ticket>
-  <mat-card class="ticket">
-    <button mat-icon-button >
-    <mat-icon color="warn" >delete</mat-icon>
-    </button>
-    <div> title</div>
-    <div> timestamp</div>
-    <div> description</div>
-  </mat-card>
-
-
   <!-- Filter Buttons -->
   <div class="filters">
     <button [class.active]="filterLevel === null" (click)="filterLevel = null">All</button>
@@ -34,7 +23,9 @@
           <p>Tickets Overview</p>
           <!-- Generate a ticket with every ticket id -->
           @for(t of filteredStatus(status); track t.id){
-            <div class="ticket" (click)=" onTicketClick()">
+            <!-- <div class="ticket" (click)=" onTicketClick()"> -->
+              <div class="ticket" [routerLink]="['/Ticket']" routerLinkActive="router-link-active" >
+             
               <p class="p">#{{ t.id }} {{ t.title }}  ----- </p>
               <br />
               <span class="level level-{{ t.level }}"> Level  {{ t.level }}</span> 

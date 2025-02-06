@@ -1,1 +1,10 @@
-<p>ticket works!</p>
+<h1>ticket works!</h1>
+<app-create-ticket  (create)="createTicket()"></app-create-ticket>
+<mat-card class="ticket">
+  <button mat-icon-button >
+  <mat-icon color="warn" >delete</mat-icon>
+  </button>
+  <div> title</div>
+  <div> timestamp</div>
+  <div> description</div>
+</mat-card>
