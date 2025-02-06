@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, catchError} from 'rxjs';
+import { Observable, catchError, first} from 'rxjs';
 
 import { User } from './models/User';
 import { Ticket } from './models/Ticket';
@@ -48,6 +48,7 @@ export class TicketService {
   deleteTicket(ticketId: Ticket["id"]): Observable<{}>{
     return this.http
         .delete<Ticket>( `${this.url}/${ticketId}` , this.httpOptions).pipe(
+          first(),
           catchError(this.errorHandlerService.handleError<Ticket>("deleteTicket"))
         );
     }
