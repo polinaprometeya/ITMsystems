@@ -3,8 +3,11 @@ import { Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core
 import { ReactiveFormsModule, FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { AuthService } from '../auth.service';
+import { TicketService } from '../ticket.service';
 
 import{Ticket} from '../models/Ticket';
+import { first } from 'rxjs';
 
 interface dropDown {
   value: string;
@@ -23,7 +26,11 @@ export class CreateTicketComponent  implements OnInit{
   @Output() create: EventEmitter<any> = new EventEmitter();
 
   ticketForm = new FormGroup('');
-  constructor(){}
+  isOpen = false;
+
+  constructor(
+    private ticketService: TicketService, private authService: AuthService
+  ){}
   
     ngOnInit(): void {
       this.ticketForm = this.createFormGroup();
@@ -51,11 +58,13 @@ export class CreateTicketComponent  implements OnInit{
         })
     }
   
-    postTicket(formData: Ticket["title"] | Ticket["description"] | Ticket["status"] | Ticket["level"]): void {
-      if(formData){console.log(formData);}
-      this.create.emit(null);
-      this.ticketForm.reset();
-      this.formDirective.resetForm()
-    }
+    // postTicket(formData: Ticket["title"] | Ticket["description"] | Ticket["status"] | Ticket["level"]): void {
+    //   if(formData){console.log(formData);}
+    //   this.ticketService.createTicket(formData, this.authService.userId).pipe(first())
+    //   .subscribe(()=>this.create.emit(null))
+      
+    //   this.ticketForm.reset();
+    //   this.formDirective.resetForm()
+    // }
 
 }

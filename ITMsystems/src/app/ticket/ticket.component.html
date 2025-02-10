@@ -2,7 +2,7 @@
 <app-create-ticket  (create)="createTicket()"></app-create-ticket>
 
 
-@for ( ticket of filteredTickets; track ticket.id )
+@for ( ticket of ticket$; track ticket.id )
 {
 <mat-card class="one-ticket">
   <button ngIf="ticket.user == userId" mat-icon-button >

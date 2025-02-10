@@ -47,6 +47,7 @@
     <button 
     color="accent" 
     [disabled] = "!ticketForm.valid" 
+    (click) = "isOpen = !isOpen"
     mat-raised-button 
     type="submit">
     <span>Create Ticket</span>

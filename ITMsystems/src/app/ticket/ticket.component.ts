@@ -33,36 +33,36 @@ export class TicketComponent implements OnInit{
     this.userId = this.authService.userId;
     console.log('ticket', this.ticket$ )
   }
-
   
   fetchAll(): Observable<Ticket[]>{
     return this.ticketService.fetchAll();
   }
 
   createTicket(): void {
+    debugger;
     this.ticket$ = this.fetchAll();
     console.log("printed from parent component")
   }
 
   deleteTicket(ticketId: Ticket["id"]): void {
+    debugger;
     this.ticketService.deleteTicket(ticketId).subscribe(()=> (this.ticket$ = this.fetchAll()))
   }
   
-    get filteredTickets(): Ticket[] {
-      // if(this.tickets.filter(ticket => ticket.level != this.filterLevel)){"No tickets at this escalation level"};
-      return this.filterLevel !== null ? this.ticket$.filter(ticket => ticket.level === this.filterLevel) : this.ticket$;
-    }
+    // get filteredTickets(): Ticket[] {
+    //   // if(this.tickets.filter(ticket => ticket.level != this.filterLevel)){"No tickets at this escalation level"};
+    //   return this.filterLevel !== null ? this.ticket$.filter(ticket => ticket.level === this.filterLevel) : this.ticket$;
+    // }
 
-     filteredStatus(status: string): Ticket[] {
-     return this.ticket$.filter(ticket => ticket.status === status && (this.filterLevel === null || ticket.level === this.filterLevel));
-    }
+    //  filteredStatus(status: string): Ticket[] {
+    //  return this.ticket$.filter(ticket => ticket.status === status && (this.filterLevel === null || ticket.level === this.filterLevel));
+    // }
   
-
-    hasTickets(status: string): boolean {
-      if(this.filteredTickets.some(ticket => ticket.status === status))
-        {return true }
-      else return false;
-    }
+    // hasTickets(status: string): boolean {
+    //   if(this.filteredTickets.some(ticket => ticket.status === status))
+    //     {return true }
+    //   else return false;
+    // }
   
     onTicketClick(): void {
       alert("Ticket editing and detailed view of single ticket coming soon")

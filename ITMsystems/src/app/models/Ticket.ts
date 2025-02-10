@@ -2,8 +2,8 @@ export interface Ticket {
     id?: number|undefined;
     title: string;
     description: string;
-    status: 'New' | 'In Progress' | 'Done';
-    level: 1 | 2 | 3;
+    status: string;
+    level: number;
     userId: number;
     timestamp: string|undefined;
     }

@@ -22,7 +22,7 @@ module.exports = class Ticket
     {
     return db.execute(
         'INSERT INTO tickets (title, description, status, level, userId) VALUES (?,?,?,?,?)', 
-        [ticket.title, ticket.description, ticket.status, ticket.level, ticket.userId  ]);
+        [ticket.title, ticket.description, ticket.status, ticket.level, ticket.userId ]);
     }
 
     static delete(id)
